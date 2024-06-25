@@ -11,18 +11,18 @@ namespace SteamPixelSepa\Sepa\Subscriber;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Shopware\Core\Checkout\Cart\Order\CartConvertedEvent;
 
-use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
+use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 
 class OrderSubscriber implements EventSubscriberInterface
 {
 
     /**
-     * @var EntityRepositoryInterface
+     * @var EntityRepository
      */
     private $customerRepository;
 
     public function __construct(
-        EntityRepositoryInterface $customerRepository
+        EntityRepository $customerRepository
     ) {
         $this->customerRepository = $customerRepository;
     }
